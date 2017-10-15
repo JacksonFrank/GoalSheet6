@@ -21,16 +21,27 @@ public class Rectangle {
 		this.height = height;
 	}
 	
-	//returns 4 point values whose coordinates indicate the four corners of the window
-	//	going clockwise starting from the top left hand corner
-	public Point[] getWindow() {
-		Point[] window = new Point[4];
-		window[0] = new Point(p);
-		window[1] = new Point(p.x + width, p.y);
-		window[2] = new Point(p.x + width, p.y - height);
-		window[3] = new Point(p.x, p.y - height);
+	//returns 4 integers that get the left and right x coordinates of the window and get the top
+	//	and bottom y coordinates of the window
+	public int[] getRange() {
+		int[] range = new int[4];
+		range[0] = p.x;
+		range[1] = p.x + width;
+		range[2] = p.y - height;
+		range[3] = p.y;
 		
-		return window;
+		return range;
+		
 	
+	}
+	
+	public Point getPoint() {
+		return p;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
 	}
 }
